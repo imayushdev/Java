@@ -1,0 +1,11 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Java build files
+*.class
+target/
+
+# Mac system files
+.DS_Store
