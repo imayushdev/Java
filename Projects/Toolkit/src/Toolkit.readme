@@ -1,0 +1,129 @@
+Universal Toolkit Project
+
+Project Overview
+Universal Toolkit is a modular multi-tool application designed to perform a wide range of computational tasks from a single interface.
+The project integrates Math, Number, Arithmetic, Finance, and Conversion toolkits under a centralized main menu system.
+
+The objective is to practice core programming concepts, modular design, and algorithm implementation while building a scalable toolkit-style project.
+Features
+
+1) Math Toolkit
+
+Even / Odd Check
+
+Square
+
+Cube
+
+Square Root
+
+GCD / HCF
+
+LCM
+
+Average Calculation
+
+2) Number Toolkit
+
+Prime Number Check
+
+Factorial Calculation
+
+Count Total Divisors
+
+Reverse Number
+
+Sum of Digits
+
+3) Arithmetic Toolkit
+
+Addition
+
+Subtraction
+
+Multiplication
+
+Division
+
+4) Finance Toolkit
+
+Simple Interest
+
+Compound Interest
+
+Percentage Calculation
+
+5) Conversion Toolkit
+
+Temperature Conversion
+
+Celsius → Fahrenheit
+
+Fahrenheit → Celsius
+
+Length Conversion
+
+Meter ↔ Kilometer
+
+Weight Conversion
+
+Kilogram ↔ Gram
+
+Project Structure
+UniversalToolkit/
+│
+├── MainToolkit.java
+├── MathToolkit.java
+├── NumberToolkit.java
+├── ArithmeticToolkit.java
+├── FinanceToolkit.java
+├── ConversionToolkit.java
+└── README.md
+Technologies Used
+
+
+
+How the Project Works
+
+The MainToolkit class acts as the entry point.
+
+A main menu is displayed to the user.
+
+Based on user selection, the corresponding toolkit module is executed.
+
+Each toolkit is implemented in a separate Java class to maintain modularity and clean structure.
+
+
+                         
+                         How to Run the Project
+Step 1: Clone or Download
+git clone https://github.com/your-username/UniversalToolkit.git
+Step 2: Compile All Files
+javac *.java
+Step 3: Run Main Program
+java MainToolkit
+       
+                         Key Concepts Demonstrated
+
+Modular Programming
+
+Object-Oriented Design (Classes and Methods)
+
+Menu-Driven Console Applications
+
+Mathematical Algorithm Implementation
+
+User Input Handling
+
+Clean Project Structure
+
+
+Author
+
+Ayush Sharma
+Computer Science Student
+Core Java Developer | Problem Solver | CS Fundamentals Learner
+
+License
+
+This project is for educational purposes and open for learning and modific
