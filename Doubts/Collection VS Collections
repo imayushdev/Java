@@ -31,3 +31,8 @@ List<Integer> list = new ArrayList<>(List.of(3, 1, 2));
 // 2. Data Manipulate किया (Using Collections Class directly)
 Collections.sort(list); // No object created, called directly!
 ```
+**मेरा कन्फ्यूजन:** अगर `Collection` एक इंटरफेस है, तो जब `ArrayList` उसे लागू (implement) करती है, तो बिना सारे मेथड्स को ओवरराइड किए कंपाइलर एरर क्यों नहीं देता?
+* **समाधान:**
+  * **विरासत का जादू (Inheritance):** `ArrayList` सीधे `Collection` इंटरफेस को लागू नहीं करती। जावा के इंजीनियर्स ने बीच में एक हेल्पर क्लास बनाई है जिसका नाम **`AbstractCollection`** है।
+  * **पहले से लिखा कोड (Pre-written Code):** `AbstractCollection` ने `Collection` इंटरफेस को लागू करके उसके अधिकांश सामान्य मेथड्स का कोड पहले से ही लिखकर रखा हुआ है।
+  * **नतीजा:** चूंकि `ArrayList` इस `AbstractCollection` क्लास को `extends` (इनहेरिट) करती है, उसे वो सारे मेथड्स बने-बनाए विरासत में मिल जाते हैं। इसलिए कंपाइलर कोई एरर नहीं देता।
