@@ -1,0 +1,33 @@
+# ⚡ Short Cheat Sheet: Collection vs Collections
+
+### 🎯 Core Difference
+* **Collection:** यह एक **डाटा होल्डर (Interface)** है। (काम: डेटा को अपने अंदर रखना / Store करना)।
+* **Collections:** यह एक **टूलबॉक्स (Utility Class)** है। (काम: डेटा पर ऑपरेशन करना जैसे Sort, Reverse)।
+
+---
+
+### 🔑 4 Key Points (For Interview)
+
+1. **Type:** 
+   * `Collection` एक **इंटरफ़ेस** है।
+   * `Collections` एक **क्लास** है।
+2. **Methods:** 
+   * `Collection` के पास सामान्य मेथड्स हैं (`add()`, `remove()`) जिन्हें क्लासेस ओवरराइड करती हैं।
+   * `Collections` के पास सिर्फ **`static`** मेथड्स हैं (`sort()`, `reverse()`)।
+3. **Constructor:** 
+   * `Collections` के पास **`private` कंस्ट्रक्टर** है। इसका ऑब्जेक्ट `new` कीवर्ड से कभी नहीं बन सकता।
+4. **Use Case:** 
+   * `Collection` = डेटा स्ट्रक्चर बनाने के लिए।
+   * `Collections` = डेटा को मैनिपुलेट करने के लिए।
+
+---
+
+### 💻 Code Snippet
+
+```java
+// 1. Data Store किया (Using Collection Framework)
+List<Integer> list = new ArrayList<>(List.of(3, 1, 2)); 
+
+// 2. Data Manipulate किया (Using Collections Class directly)
+Collections.sort(list); // No object created, called directly!
+```
