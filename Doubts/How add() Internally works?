@@ -1,0 +1,29 @@
+[ HashSet.add(key) ]
+         │
+         ▼  (Calls Internally)
+[ HashMap.put(key, PRESENT) ]
+         │
+         ▼  (Invokes Execution)
+[ putVal(hash, key, value) ]
+         │
+         ├─► Step 1: Generate Hash ──► hash(key) ──► calls key.hashCode()
+         │
+         └─► Step 2: Evaluation Pipeline Matrix
+             │
+             ├───► [ p.hash == hash ] 
+             │         │
+             │         ├───► (FALSE) ──► [ Diff Bucket: Insert New Element ]
+             │         │
+             │         └───► (TRUE)  ──► [ Same Bucket: Check Reference ]
+             │                                │
+             └───► [ (k = p.key) == key ] ◄───┘
+                       │
+                       ├───► (TRUE)  ──► [ Same Memory: Duplicate Found ]
+                       │
+                       └───► (FALSE) ──► [ Diff Memory: Check Deep Content ]
+                                              │
+                                              ▼
+                                   [ key.equals(k) ]
+                                              │
+                                              ├───► (TRUE)  ─► [ Duplicate Found ]
+
