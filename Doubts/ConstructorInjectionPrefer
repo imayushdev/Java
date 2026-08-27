@@ -1,0 +1,20 @@
+# ⚡ Quick Guide: Constructor Injection vs Others
+
+## ❌ Why AVOID Field & Setter Injection?
+* **No Immutability:** `final` कीवर्ड का इस्तेमाल **असंभव** है, क्योंकि स्प्रिंग ऑब्जेक्ट बनने के *बाद* वैल्यू डालता है।
+* **Runtime Crash Risk:** डिपेंडेंसी मिस होने पर एरर कंपाइल-टाइम पर नहीं, बल्कि सीधे रनटाइम पर (`NullPointerException`) आता है।
+* **Hard Testing:** बिना स्प्रिंग कंटेनर (IoC) चालू किए यूनिट टेस्टिंग (JUnit) करना बहुत मुश्किल होता है।
+
+## ✅ Why PREFER Constructor Injection? (Modern Industry Standard)
+* **100% Immutability:** फ़ील्ड्स को **`final`** बना सकते हैं क्योंकि वैल्यू कंस्ट्रक्टर के चलते समय ही मिल जाती है।
+* **Fail-Fast (Compile Safety):** कोई डिपेंडेंसी मिसिंग होगी तो ऐप स्टार्ट होते ही एरर दे देगा (नो रनटाइम क्रैश)।
+* **Easy Testing:** बिना किसी फ्रेमवर्क के, सीधे प्लेन जावा कंस्ट्रक्टर `new Controller(mockService)` लिखकर टेस्ट कर सकते हैं।
+
+## 💻 Best Practice Code (Lombok Standard)
+```java
+@RestController
+@RequiredArgsConstructor // 🔥 बैकएंड में कंस्ट्रक्टर खुद बना देता है
+public class UserController {
+    private final UserService userService; // ✅ Perfectly final & safe!
+}
+```
