@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id = "petrolEngine" class = "com.example.petrolEngine"/>
+    <bean id = "DieselEngine" class = "com.example.DieselEngine"/>
+    <bean id = "car" class = "com.example.Car">
+       <!-- <constructor-arg ref="DieselEngine"/>  via constructor-->
+        <property name="engine" ref="petrolEngine"/>
+        <!-- if both then first constructor call and then setter so last setup by setter-->
+
+    </bean>
+
+
+
+</beans>
